@@ -1,0 +1,110 @@
+# Build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]in/
+[Oo]bj/
+# [Ll]og/
+# [Ll]ogs/
+
+# Visual Studio workspace files
+.vs/
+.vscode/
+*.user
+*.suo
+*.sln.docstates
+*.pdb
+*.opendb
+*.VC.db
+*.VC.VC.opendb
+*.VC.VC.opendb.lock
+
+# Rider workspace files
+.idea/
+
+# Mono Auto Generated Files
+mono_crash.*
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# VS Code directories
+.vscode/
+
+# Roslyn caches
+*.ide/
+*.cache/
+
+# Backup & report files from converting an old project file
+_UpgradeReport_Files/
+Backup*/
+UpgradeLog*.XML
+UpgradeLog*.htm
+
+# SQL Server files
+*.mdf
+*.ldf
+*.ndf
+
+# Microsoft Azure Web App publish settings. [Edit to match your publish settings file path]
+# Example: `Properties/PublishProfiles/Your-App-Name.pubxml`
+*.pubxml
+*.publishsettings
+
+# IIS Express SSL certificate
+/.vs/config/applicationhost.config
+/.vs/**/config/applicationhost.config
+/.vs/**/config/applicationhost.config.lock
+
+# Windows clutter
+Thumbs.db
+ehthumbs.db
+
+# Custom extensions
+*.rsuser
+*.rdl.data
+*.bnd
+
+# JetBrains Rider
+.idea/
+.idea_modules/
+*.sln.iml
+
+# NuGet packages
+*.nupkg
+# The packages folder can be ignored because of Package Restore
+**/[Pp]ackages/*/
+
+# Windows File Protection files
+*.dll_original
+
+# Rider unit test files
+.idea/workspace.xml
+.idea/libraries
+.idea_modules/**/.idea/
+
+# Rider temporary files
+.idea/shelf/
+.idea/sandbox/
+.idea/fileTemplates/
+
+# SonarQube files
+.sonar/
+.sonarqube/
+
+# Backup files
+*.bak
+*.swp
+*.swo
+*.tmp
