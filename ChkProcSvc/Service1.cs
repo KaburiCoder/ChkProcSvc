@@ -1,15 +1,9 @@
 ﻿using ChkProcLib.Helpers;
-using ChkProcLib.Models;
 using ChkProcSvc.Constants;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
-using System.IO;
 using System.Linq;
 using System.ServiceProcess;
-using System.Text;
 using System.Timers;
 
 namespace ChkProcSvc
@@ -17,8 +11,6 @@ namespace ChkProcSvc
   public partial class Service1 : ServiceBase
   {
     private readonly Logger logger = new Logger();
-    private readonly object lockObj = new object();
-    private readonly CheckInfoHelper infoHelper = new CheckInfoHelper();
     private Timer timer;
 
     public Service1()

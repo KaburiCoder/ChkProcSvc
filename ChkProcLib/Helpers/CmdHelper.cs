@@ -125,7 +125,7 @@ namespace ChkProcLib.Helpers
       taskName = $"\"{taskName}\"";
       path = $"\"\\\"{path}\"\\\"";
 
-      string createCommand = $"schtasks /create /tn {taskName} /tr {path} {args} /sc once /st 00:00 /f /ru {userName}";
+      string createCommand = $"schtasks /create /tn {taskName} /tr {path} {args} /sc once /st 00:00 /f /ru {userName} /RL HIGHEST";
       string runCommand = $"schtasks /run /tn \"{taskName}\"";
       //string deleteCommand = $"schtasks /delete /tn \"{taskName}\" /f";
 
