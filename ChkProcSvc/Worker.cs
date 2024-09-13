@@ -53,22 +53,22 @@ namespace ChkProcSvc
       return process;
     }
 
-    private bool RunProcess(out int pid, out string err)
-    {
-      try
-      {
-        var process = ProcessHelper.RunAsAdmin(info.FullPath.Replace("\\", "/"));
-        pid = (process?.Id ?? 0);
-        err = null;
-        return true;
-      }
-      catch (Exception ex)
-      {
-        err = $"\n{ex}";
-        pid = 0;
-        return false;
-      }
-    }
+    //private bool RunProcess(out int pid, out string err)
+    //{
+    //  try
+    //  {
+    //    var process = ProcessHelper.RunAsAdmin(info.FullPath.Replace("\\", "/"));
+    //    pid = (process?.Id ?? 0);
+    //    err = null;
+    //    return true;
+    //  }
+    //  catch (Exception ex)
+    //  {
+    //    err = $"\n{ex}";
+    //    pid = 0;
+    //    return false;
+    //  }
+    //}
 
     public void Working()
     {

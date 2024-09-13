@@ -7,7 +7,7 @@ namespace ChkProcLib.Entities
 {
   public class ProcessLog
   {
-    public int Id { get; set; }  // Id 컬럼에 대응
+    public long Id { get; set; }  // Id 컬럼에 대응
     public DateTime CreatedAt { get; set; }  // CreatedAt 컬럼에 대응
     public string ProcessName { get; set; }  // ProcessName 컬럼에 대응
     public string Status { get; set; }  // Status 컬럼에 대응

@@ -1,5 +1,7 @@
 ﻿using ChkProcLib.Helpers;
+using ChkProcLib.Services;
 using ChkProcSvc.Constants;
+using ChkProcSvc.Shared;
 using System;
 using System.Diagnostics;
 using System.Linq;
@@ -10,8 +12,10 @@ namespace ChkProcSvc
 {
   public partial class Service1 : ServiceBase
   {
+    private ProcessLogService processLogService = new ProcessLogService();
     private readonly Logger logger = new Logger();
     private Timer timer;
+    FunctionCallManager functionCallManager = new FunctionCallManager();
 
     public Service1()
     {
@@ -61,6 +65,21 @@ namespace ChkProcSvc
             logger.ServiceLog(ServiceLogStatus.TryStartDaemonFailure, "Failed to start the daemon process");
           }
         }
+
+        // 하루에 한번씩 1달 지난 데이터 삭제
+        functionCallManager.RunOncePerDay(() =>
+        {
+          try
+          {
+            logger.ServiceLog(ServiceLogStatus.DeleteLogs, "Deletes logs older than one month");
+            processLogService.DeleteOldLogs();
+            logger.DeleteOldLogs();
+          }
+          catch (Exception ex)
+          {
+            logger.ServiceLog(ServiceLogStatus.DeleteLogsError, ex.ToString());
+          }
+        });
       }
       catch (Exception ex)
       {

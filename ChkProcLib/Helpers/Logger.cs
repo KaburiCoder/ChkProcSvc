@@ -80,6 +80,34 @@ namespace ChkProcLib.Helpers
       }
     }
 
+    public void DeleteOldLogs()
+    {
+      // 현재 날짜에서 한 달 전 날짜 구하기
+      DateTime oneMonthAgo = DateTime.Now.AddMonths(-1);
+
+      // logDirectory 안의 모든 .log 파일 가져오기
+      var logFiles = Directory.GetFiles(Paths.Logs, "*.log", SearchOption.AllDirectories);
+
+      foreach (var logFile in logFiles)
+      {
+        // 파일명에서 날짜 추출 (파일명은 YYYY-MM-DD.log 형식으로 되어있다고 가정)
+        string fileName = Path.GetFileNameWithoutExtension(logFile);
+
+        if (DateTime.TryParse(fileName, out DateTime logDate))
+        {
+          // 로그 날짜가 한 달 이전이면 파일 삭제
+          if (logDate < oneMonthAgo)
+          {
+            try
+            {
+              File.Delete(logFile);
+            }
+            catch { }
+          }
+        }
+      }
+    }
+
     public void ServiceLog(ServiceLogStatus status, string message)
     {
       string pidMark = CreatePIDMark(Process.GetCurrentProcess().Id);
@@ -116,6 +144,8 @@ namespace ChkProcLib.Helpers
     WorkingError,
     UnhandledError,
     SQLiteError,
+    DeleteLogs,
+    DeleteLogsError,
   }
 
   public enum DaemonLogStatus

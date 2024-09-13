@@ -25,7 +25,15 @@ namespace ChkProcLib.Services
       return repo.Find(range.StartDate, range.EndDate, processName);
     }
 
-    public List<ProcessLog> FindNew(int lastId, string processName)
+    public void DeleteOldLogs()
+    {
+      var now = DateTime.Now;
+      var startDate = new DateTime(now.Year, now.Month, now.Day, 0, 0, 0).AddMonths(-1);
+
+      repo.DeleteBefore(startDate);
+    }
+
+    public List<ProcessLog> FindNew(long lastId, string processName)
     {
       return repo.FindNew(lastId, processName);
     }

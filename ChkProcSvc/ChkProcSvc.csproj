@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Shared\FunctionCallManager.cs" />
     <Compile Include="Shared\Loader\ApplicationLoader.cs" />
     <Compile Include="Constants\ProcessConst.cs" />
     <Compile Include="Service1.cs">

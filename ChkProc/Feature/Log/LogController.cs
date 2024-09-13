@@ -47,7 +47,7 @@ namespace ChkProc.Feature.Log
 
     internal void LoadInfinite()
     {
-      int lastId = processLogs.Count == 0 ? 0 : processLogs.Max(p => p.Id);
+      long lastId = processLogs.Count == 0 ? 0 : processLogs.Max(p => p.Id);
       var newProcessLogs = processLogService.FindNew(lastId, view.ProcessName);
       processLogs.AddRange(newProcessLogs);
       view.AddGridRows(newProcessLogs);

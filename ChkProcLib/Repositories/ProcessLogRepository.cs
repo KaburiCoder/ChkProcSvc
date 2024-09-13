@@ -55,7 +55,20 @@ SELECT last_insert_rowid();";
       }
     }
 
-    public List<ProcessLog> FindNew(int lastId, string processName)
+    public void DeleteBefore(DateTime startDate)
+    {
+      string query = @"
+        DELETE FROM ProcessLog
+        WHERE CreatedAt < @startDate";
+
+      using (var connection = SQLiteProvider.Instance.Conn)
+      {
+        connection.Execute(query, new { startDate });
+        connection.Execute("VACUUM", null);
+      }
+    }
+
+    public List<ProcessLog> FindNew(long lastId, string processName)
     {
       string query = @"
         SELECT * FROM ProcessLog
