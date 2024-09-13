@@ -102,7 +102,9 @@ namespace ChkProcLib.Helpers
   public enum LogStatus
   {
     Active,
-    Inactive
+    Inactive,
+    ActiveSvc,
+    InactiveSvc,
   }
 
   public enum ServiceLogStatus

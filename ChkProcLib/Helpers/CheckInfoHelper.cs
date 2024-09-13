@@ -45,12 +45,17 @@ namespace ChkProcLib.Helpers
 
       if (string.IsNullOrEmpty(json)) return new List<CheckInfo>();
 
-      var list =  JsonConvert.DeserializeObject<List<CheckInfo>>(json);
-      foreach(var info in list)
+      var list = JsonConvert.DeserializeObject<List<CheckInfo>>(json);
+      foreach (var info in list)
       {
         info.FullPath = info.FullPath.Replace("/", "\\"); // 윈도우 경로로 변환
       }
       return list;
+    }
+
+    public CheckInfo GetCheckInfo(string processName)
+    {
+      return GetCheckInfos().Find(info => info.ProcessName.ToLower() == processName.ToLower());
     }
   }
 }

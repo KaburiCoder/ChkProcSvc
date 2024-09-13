@@ -1,9 +1,5 @@
 ﻿using ChkProc.Feature.Log;
 using ChkProc.Pages;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace ChkProc.Shared.Router
 {

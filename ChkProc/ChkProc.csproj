@@ -87,6 +87,12 @@
     <Compile Include="Feature\Main\UI\SettingListControl.Designer.cs">
       <DependentUpon>SettingListControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Feature\RequiredSvc\UI\RequiredSvcControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Feature\RequiredSvc\UI\RequiredSvcControl.Designer.cs">
+      <DependentUpon>RequiredSvcControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Log\LogView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,6 +118,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Feature\Main\UI\SettingListControl.resx">
       <DependentUpon>SettingListControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Feature\RequiredSvc\UI\RequiredSvcControl.resx">
+      <DependentUpon>RequiredSvcControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\Log\LogView.resx">
       <DependentUpon>LogView.cs</DependentUpon>

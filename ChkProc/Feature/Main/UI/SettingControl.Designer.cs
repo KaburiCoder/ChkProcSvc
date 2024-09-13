@@ -29,6 +29,7 @@ namespace ChkProc.Feature.Main.UI
     /// </summary>
     private void InitializeComponent()
     {
+      this.components = new System.ComponentModel.Container();
       this.txtFullPath = new DevComponents.DotNetBar.Controls.TextBoxX();
       this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
       this.label1 = new System.Windows.Forms.Label();
@@ -38,6 +39,9 @@ namespace ChkProc.Feature.Main.UI
       this.label4 = new System.Windows.Forms.Label();
       this.btnDel = new DevComponents.DotNetBar.ButtonX();
       this.btnNavToLogs = new DevComponents.DotNetBar.ButtonX();
+      this.btnRequired = new DevComponents.DotNetBar.ButtonX();
+      this.flyRequiredSvc = new DevComponents.DotNetBar.Controls.Flyout(this.components);
+      this.lblTime = new System.Windows.Forms.Label();
       this.flowLayoutPanel1.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.iiSec)).BeginInit();
       this.SuspendLayout();
@@ -68,10 +72,11 @@ namespace ChkProc.Feature.Main.UI
       this.flowLayoutPanel1.Controls.Add(this.label3);
       this.flowLayoutPanel1.Controls.Add(this.iiSec);
       this.flowLayoutPanel1.Controls.Add(this.label4);
+      this.flowLayoutPanel1.Controls.Add(this.lblTime);
       this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
       this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
       this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-      this.flowLayoutPanel1.Size = new System.Drawing.Size(568, 27);
+      this.flowLayoutPanel1.Size = new System.Drawing.Size(689, 27);
       this.flowLayoutPanel1.TabIndex = 1;
       this.flowLayoutPanel1.WrapContents = false;
       // 
@@ -116,7 +121,7 @@ namespace ChkProc.Feature.Main.UI
       this.iiSec.MinValue = 1;
       this.iiSec.Name = "iiSec";
       this.iiSec.ShowUpDown = true;
-      this.iiSec.Size = new System.Drawing.Size(49, 21);
+      this.iiSec.Size = new System.Drawing.Size(85, 21);
       this.iiSec.TabIndex = 3;
       this.iiSec.Value = 1;
       this.iiSec.ValueChanged += new System.EventHandler(this.iiSec_ValueChanged);
@@ -124,7 +129,7 @@ namespace ChkProc.Feature.Main.UI
       // label4
       // 
       this.label4.AutoSize = true;
-      this.label4.Location = new System.Drawing.Point(486, 8);
+      this.label4.Location = new System.Drawing.Point(522, 8);
       this.label4.Margin = new System.Windows.Forms.Padding(3, 8, 3, 0);
       this.label4.Name = "label4";
       this.label4.Size = new System.Drawing.Size(17, 12);
@@ -136,7 +141,7 @@ namespace ChkProc.Feature.Main.UI
       this.btnDel.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
       this.btnDel.ColorTable = DevComponents.DotNetBar.eButtonColor.Flat;
       this.btnDel.Dock = System.Windows.Forms.DockStyle.Right;
-      this.btnDel.Location = new System.Drawing.Point(603, 0);
+      this.btnDel.Location = new System.Drawing.Point(759, 0);
       this.btnDel.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
       this.btnDel.Name = "btnDel";
       this.btnDel.Size = new System.Drawing.Size(35, 27);
@@ -151,7 +156,7 @@ namespace ChkProc.Feature.Main.UI
       this.btnNavToLogs.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
       this.btnNavToLogs.ColorTable = DevComponents.DotNetBar.eButtonColor.Flat;
       this.btnNavToLogs.Dock = System.Windows.Forms.DockStyle.Right;
-      this.btnNavToLogs.Location = new System.Drawing.Point(568, 0);
+      this.btnNavToLogs.Location = new System.Drawing.Point(724, 0);
       this.btnNavToLogs.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
       this.btnNavToLogs.Name = "btnNavToLogs";
       this.btnNavToLogs.Size = new System.Drawing.Size(35, 27);
@@ -161,6 +166,40 @@ namespace ChkProc.Feature.Main.UI
       this.btnNavToLogs.TabIndex = 7;
       this.btnNavToLogs.Click += new System.EventHandler(this.btnNavToLogs_Click);
       // 
+      // btnRequired
+      // 
+      this.btnRequired.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+      this.btnRequired.ColorTable = DevComponents.DotNetBar.eButtonColor.Flat;
+      this.btnRequired.Dock = System.Windows.Forms.DockStyle.Right;
+      this.btnRequired.Location = new System.Drawing.Point(689, 0);
+      this.btnRequired.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
+      this.btnRequired.Name = "btnRequired";
+      this.btnRequired.Size = new System.Drawing.Size(35, 27);
+      this.btnRequired.Symbol = "";
+      this.btnRequired.SymbolColor = System.Drawing.SystemColors.HotTrack;
+      this.btnRequired.SymbolSize = 15F;
+      this.btnRequired.TabIndex = 8;
+      this.btnRequired.Click += new System.EventHandler(this.btnRequired_Click);
+      // 
+      // flyRequiredSvc
+      // 
+      this.flyRequiredSvc.DisplayMode = DevComponents.DotNetBar.Controls.eFlyoutDisplayMode.Manual;
+      this.flyRequiredSvc.DropShadow = false;
+      this.flyRequiredSvc.Parent = this;
+      this.flyRequiredSvc.TargetControl = this.btnRequired;
+      this.flyRequiredSvc.FlyoutClosed += new System.Windows.Forms.FormClosedEventHandler(this.flyRequiredSvc_FlyoutClosed);
+      // 
+      // lblTime
+      // 
+      this.lblTime.AutoSize = true;
+      this.lblTime.ForeColor = System.Drawing.Color.Gray;
+      this.lblTime.Location = new System.Drawing.Point(545, 8);
+      this.lblTime.Margin = new System.Windows.Forms.Padding(3, 8, 3, 0);
+      this.lblTime.Name = "lblTime";
+      this.lblTime.Size = new System.Drawing.Size(67, 12);
+      this.lblTime.TabIndex = 6;
+      this.lblTime.Text = "0시 0분 0초";
+      // 
       // SettingControl
       // 
       this.AllowDrop = true;
@@ -168,10 +207,11 @@ namespace ChkProc.Feature.Main.UI
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.BackColor = System.Drawing.Color.White;
       this.Controls.Add(this.flowLayoutPanel1);
+      this.Controls.Add(this.btnRequired);
       this.Controls.Add(this.btnNavToLogs);
       this.Controls.Add(this.btnDel);
       this.Name = "SettingControl";
-      this.Size = new System.Drawing.Size(638, 27);
+      this.Size = new System.Drawing.Size(794, 27);
       this.DragDrop += new System.Windows.Forms.DragEventHandler(this.SettingControl_DragDrop);
       this.DragEnter += new System.Windows.Forms.DragEventHandler(this.SettingControl_DragEnter);
       this.flowLayoutPanel1.ResumeLayout(false);
@@ -192,5 +232,8 @@ namespace ChkProc.Feature.Main.UI
     private System.Windows.Forms.Label label4;
     private DevComponents.DotNetBar.ButtonX btnDel;
     private DevComponents.DotNetBar.ButtonX btnNavToLogs;
+    private DevComponents.DotNetBar.ButtonX btnRequired;
+    private DevComponents.DotNetBar.Controls.Flyout flyRequiredSvc;
+    private System.Windows.Forms.Label lblTime;
   }
 }

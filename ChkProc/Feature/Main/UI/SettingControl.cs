@@ -1,7 +1,10 @@
-﻿using ChkProc.Shared.Router;
+﻿using ChkProc.Feature.RequiredSvc.UI;
+using ChkProc.Shared.Router;
+using ChkProcLib.Helpers;
 using ChkProcLib.Models;
 using System;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace ChkProc.Feature.Main.UI
@@ -12,6 +15,20 @@ namespace ChkProc.Feature.Main.UI
 
     private readonly CheckInfo info;
     private readonly CheckInfo prevInfo;
+    private RequiredSvcControl _svcControl;
+    private RequiredSvcControl SvcControl
+    {
+      get
+      {
+        if (_svcControl == null)
+        {
+          _svcControl = new RequiredSvcControl(info);
+          _svcControl.OnClose += (_, __) => flyRequiredSvc.Close();
+        }
+        return _svcControl;
+      }
+    }
+
     public SettingControl(CheckInfo info)
     {
       this.info = info;
@@ -31,11 +48,17 @@ namespace ChkProc.Feature.Main.UI
     {
       bool isPathChanged = info.FullPath.ToLower() != prevInfo.FullPath.ToLower();
       bool isSecChanged = info.Sec != prevInfo.Sec;
+      bool isRequiredSvcChanged = info.RequiredServices.Count != prevInfo.RequiredServices.Count
+        || !info.RequiredServices.All(info =>
+            prevInfo.RequiredServices.Any(pinfo => info.ServiceName.ToLower() == pinfo.ServiceName.ToLower())); 
 
-      this.BackColor = isPathChanged || isSecChanged ? Color.LightPink : Color.White;
+      this.BackColor = isPathChanged || isSecChanged || isRequiredSvcChanged ? Color.LightPink : Color.White;
 
       txtFullPath.ForeColor = isPathChanged ? Color.HotPink : Color.Black;
-      iiSec.ForeColor = isSecChanged ? Color.HotPink: Color.Black;
+      iiSec.ForeColor = isSecChanged ? Color.HotPink : Color.Black;
+
+      // 시간 포맷팅
+      lblTime.Text = FormatHelper.FormatTime(info.Sec);
     }
 
     private void txtFullPath_TextChanged(object sender, EventArgs e)
@@ -95,6 +118,17 @@ namespace ChkProc.Feature.Main.UI
     private void btnNavToLogs_Click(object sender, EventArgs e)
     {
       Router.ShowLogView(prevInfo.ProcessName);
+    }
+
+    private void btnRequired_Click(object sender, EventArgs e)
+    {
+      flyRequiredSvc.Content = SvcControl;
+      flyRequiredSvc.Show(sender);
+    }
+
+    private void flyRequiredSvc_FlyoutClosed(object sender, FormClosedEventArgs e)
+    {
+      DisplayChangeItems();
     }
   }
 }

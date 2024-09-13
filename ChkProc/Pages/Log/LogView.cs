@@ -81,7 +81,7 @@ namespace ChkProc.Pages
 
     private void btnSearch_Click(object sender, EventArgs e)
     {
-      cont.Search(); 
+      cont.Search();
     }
 
     private void SetGridRow(int row, ProcessLog log)
@@ -119,6 +119,12 @@ namespace ChkProc.Pages
         case "Inactive":
           dgvRow.Cells[colIdx.Status].Style.ForeColor = Color.Red;
           dgvRow.Cells[colIdx.Status].Style.Font = new Font("굴림", 9, FontStyle.Bold);
+          break;
+        case "ActiveSvc":
+          dgvRow.Cells[colIdx.Status].Style.ForeColor = Color.Green;
+          break;
+        case "InactiveSvc":
+          dgvRow.Cells[colIdx.Status].Style.ForeColor = Color.Red;
           break;
       }
     }

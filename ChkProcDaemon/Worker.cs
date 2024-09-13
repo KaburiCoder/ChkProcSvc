@@ -70,6 +70,24 @@ namespace ChkProcDaemon
       }
     }
 
+    private bool CheckRequiredServices(string processName)
+    {
+      if (info.RequiredServices.Count == 0) return true;
+
+      foreach (var svc in info.RequiredServices)
+      {
+        ServiceStatus status = ServiceHelper.GetStatus(svc.ServiceName);
+        bool isRunning = status == ServiceStatus.Running;
+        logger.Log(processName, isRunning ? LogStatus.ActiveSvc : LogStatus.InactiveSvc, $"[Required Service] {svc.DisplayName} - {status}");
+        if (!isRunning)
+        {
+          return false;
+        }
+      }
+
+      return true;
+    }
+
     public void Working()
     {
       ServiceUtil.KillProcessIfNotService();
@@ -83,6 +101,7 @@ namespace ChkProcDaemon
         if (status == LogStatus.Inactive)
         {
           logger.Log(processName, status, $"[{info.FullPath}] Trying to Start");
+          if (!CheckRequiredServices(processName)) return;
 
           bool successStarted = RunProcess(out pid, out string err);
 

@@ -41,11 +41,11 @@ namespace ChkProc
       this.btnStartSvc = new DevComponents.DotNetBar.ButtonX();
       this.splitter1 = new System.Windows.Forms.Splitter();
       this.panel1 = new System.Windows.Forms.Panel();
-      this.setListCtrl = new ChkProc.Feature.Main.UI.SettingListControl();
       this.panelEx3 = new DevComponents.DotNetBar.PanelEx();
       this.txtOutput = new DevComponents.DotNetBar.Controls.TextBoxX();
       this.label1 = new System.Windows.Forms.Label();
       this.svcTimer = new System.Windows.Forms.Timer(this.components);
+      this.setListCtrl = new ChkProc.Feature.Main.UI.SettingListControl();
       this.panelEx1.SuspendLayout();
       this.flowLayoutPanel2.SuspendLayout();
       this.panel1.SuspendLayout();
@@ -64,7 +64,7 @@ namespace ChkProc
       this.panelEx1.Location = new System.Drawing.Point(0, 0);
       this.panelEx1.Name = "panelEx1";
       this.panelEx1.Padding = new System.Windows.Forms.Padding(4);
-      this.panelEx1.Size = new System.Drawing.Size(749, 50);
+      this.panelEx1.Size = new System.Drawing.Size(822, 50);
       this.panelEx1.Style.Alignment = System.Drawing.StringAlignment.Center;
       this.panelEx1.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
       this.panelEx1.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -108,7 +108,7 @@ namespace ChkProc
       this.flowLayoutPanel2.Controls.Add(this.btnStartSvc);
       this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Right;
       this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-      this.flowLayoutPanel2.Location = new System.Drawing.Point(387, 4);
+      this.flowLayoutPanel2.Location = new System.Drawing.Point(460, 4);
       this.flowLayoutPanel2.Name = "flowLayoutPanel2";
       this.flowLayoutPanel2.Size = new System.Drawing.Size(358, 42);
       this.flowLayoutPanel2.TabIndex = 10;
@@ -171,7 +171,7 @@ namespace ChkProc
       this.splitter1.Dock = System.Windows.Forms.DockStyle.Top;
       this.splitter1.Location = new System.Drawing.Point(0, 248);
       this.splitter1.Name = "splitter1";
-      this.splitter1.Size = new System.Drawing.Size(749, 8);
+      this.splitter1.Size = new System.Drawing.Size(822, 8);
       this.splitter1.TabIndex = 29;
       this.splitter1.TabStop = false;
       // 
@@ -181,16 +181,8 @@ namespace ChkProc
       this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
       this.panel1.Location = new System.Drawing.Point(0, 50);
       this.panel1.Name = "panel1";
-      this.panel1.Size = new System.Drawing.Size(749, 198);
+      this.panel1.Size = new System.Drawing.Size(822, 198);
       this.panel1.TabIndex = 33;
-      // 
-      // setListCtrl
-      // 
-      this.setListCtrl.Dock = System.Windows.Forms.DockStyle.Fill;
-      this.setListCtrl.Location = new System.Drawing.Point(0, 0);
-      this.setListCtrl.Name = "setListCtrl";
-      this.setListCtrl.Size = new System.Drawing.Size(749, 198);
-      this.setListCtrl.TabIndex = 41;
       // 
       // panelEx3
       // 
@@ -203,7 +195,7 @@ namespace ChkProc
       this.panelEx3.Location = new System.Drawing.Point(0, 256);
       this.panelEx3.Name = "panelEx3";
       this.panelEx3.Padding = new System.Windows.Forms.Padding(4);
-      this.panelEx3.Size = new System.Drawing.Size(749, 258);
+      this.panelEx3.Size = new System.Drawing.Size(822, 258);
       this.panelEx3.Style.Alignment = System.Drawing.StringAlignment.Center;
       this.panelEx3.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
       this.panelEx3.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -229,7 +221,7 @@ namespace ChkProc
       this.txtOutput.PreventEnterBeep = true;
       this.txtOutput.ReadOnly = true;
       this.txtOutput.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-      this.txtOutput.Size = new System.Drawing.Size(741, 234);
+      this.txtOutput.Size = new System.Drawing.Size(814, 234);
       this.txtOutput.TabIndex = 3;
       // 
       // label1
@@ -237,7 +229,7 @@ namespace ChkProc
       this.label1.Dock = System.Windows.Forms.DockStyle.Top;
       this.label1.Location = new System.Drawing.Point(4, 4);
       this.label1.Name = "label1";
-      this.label1.Size = new System.Drawing.Size(741, 16);
+      this.label1.Size = new System.Drawing.Size(814, 16);
       this.label1.TabIndex = 2;
       this.label1.Text = "Output";
       // 
@@ -246,12 +238,20 @@ namespace ChkProc
       this.svcTimer.Enabled = true;
       this.svcTimer.Tick += new System.EventHandler(this.svcTimer_Tick);
       // 
+      // setListCtrl
+      // 
+      this.setListCtrl.Dock = System.Windows.Forms.DockStyle.Fill;
+      this.setListCtrl.Location = new System.Drawing.Point(0, 0);
+      this.setListCtrl.Name = "setListCtrl";
+      this.setListCtrl.Size = new System.Drawing.Size(822, 198);
+      this.setListCtrl.TabIndex = 41;
+      // 
       // MainView
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
-      this.ClientSize = new System.Drawing.Size(749, 514);
+      this.ClientSize = new System.Drawing.Size(822, 514);
       this.Controls.Add(this.panelEx3);
       this.Controls.Add(this.splitter1);
       this.Controls.Add(this.panel1);
