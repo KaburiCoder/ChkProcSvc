@@ -6,6 +6,7 @@ using ChkProcLib.Helpers;
 using ChkProcLib.Services;
 using DevComponents.DotNetBar;
 using System;
+using System.Reflection;
 using System.Windows.Forms;
 
 namespace ChkProc
@@ -18,6 +19,17 @@ namespace ChkProc
     public MainView()
     {
       InitializeComponent();
+
+      SetWindowTitle();
+    }
+
+    private void SetWindowTitle()
+    {
+      // 어셈블리의 파일 버전 가져오기
+      var version = Assembly.GetExecutingAssembly().GetName().Version;
+
+      // 윈도우 제목 설정
+      this.Text = $"서비스 관리 (ServiceName: ChkProcSvc) - v{version}";
     }
 
     public void SetController(MainController controller)
