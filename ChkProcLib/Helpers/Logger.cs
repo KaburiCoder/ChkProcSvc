@@ -60,10 +60,10 @@ namespace ChkProcLib.Helpers
       WriteLog(processName, fileFullName, CreatePIDMark(pid) + message, status.ToString());
     }
 
-    private void WriteLog(string processName, string fileFullName, string message, string status)
+    private void WriteLog(string processName, string fileFullName, string message, string status, bool noSaveSQLite = false)
     {
       DateTime createdAt = WriteLine(fileFullName, message);
-
+      if (noSaveSQLite) return;
       try
       {
         logService.Save(new ProcessLog
@@ -76,7 +76,7 @@ namespace ChkProcLib.Helpers
       }
       catch (Exception ex)
       {
-        ServiceLog(ServiceLogStatus.SQLiteError, ex.ToString());
+        ServiceLog(ServiceLogStatus.SQLiteError, ex.ToString(), noSaveSQLite: true);
       }
     }
 
@@ -108,13 +108,13 @@ namespace ChkProcLib.Helpers
       }
     }
 
-    public void ServiceLog(ServiceLogStatus status, string message)
+    public void ServiceLog(ServiceLogStatus status, string message, bool noSaveSQLite = false)
     {
       string pidMark = CreatePIDMark(Process.GetCurrentProcess().Id);
       string fileFullName = Path.Combine(Paths.Logs, "service.log");
       string logMessage = $"{pidMark}[{status}] {message}";
 
-      WriteLog("<Service>", fileFullName, logMessage, status.ToString());
+      WriteLog("<Service>", fileFullName, logMessage, status.ToString(), noSaveSQLite: noSaveSQLite);
     }
 
     public void DaemonLog(DaemonLogStatus status, string message)
