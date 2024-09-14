@@ -52,7 +52,7 @@ namespace ChkProc.Feature.Main.UI
         || !info.RequiredServices.All(info =>
             prevInfo.RequiredServices.Any(pinfo => info.ServiceName.ToLower() == pinfo.ServiceName.ToLower())); 
 
-      this.BackColor = isPathChanged || isSecChanged || isRequiredSvcChanged ? Color.LightPink : Color.FromArgb(100, 100, 100);
+      this.BackColor = isPathChanged || isSecChanged || isRequiredSvcChanged ? Color.HotPink : Color.FromArgb(100, 100, 100);
 
       txtFullPath.ForeColor = isPathChanged ? Color.HotPink : Color.Black;
       iiSec.ForeColor = isSecChanged ? Color.HotPink : Color.Black;
