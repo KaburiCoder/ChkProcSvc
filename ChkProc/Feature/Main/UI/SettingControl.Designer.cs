@@ -37,11 +37,11 @@ namespace ChkProc.Feature.Main.UI
       this.label3 = new System.Windows.Forms.Label();
       this.iiSec = new DevComponents.Editors.IntegerInput();
       this.label4 = new System.Windows.Forms.Label();
+      this.lblTime = new System.Windows.Forms.Label();
       this.btnDel = new DevComponents.DotNetBar.ButtonX();
       this.btnNavToLogs = new DevComponents.DotNetBar.ButtonX();
       this.btnRequired = new DevComponents.DotNetBar.ButtonX();
       this.flyRequiredSvc = new DevComponents.DotNetBar.Controls.Flyout(this.components);
-      this.lblTime = new System.Windows.Forms.Label();
       this.flowLayoutPanel1.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.iiSec)).BeginInit();
       this.SuspendLayout();
@@ -83,6 +83,7 @@ namespace ChkProc.Feature.Main.UI
       // label1
       // 
       this.label1.AutoSize = true;
+      this.label1.ForeColor = System.Drawing.Color.White;
       this.label1.Location = new System.Drawing.Point(3, 8);
       this.label1.Margin = new System.Windows.Forms.Padding(3, 8, 3, 0);
       this.label1.Name = "label1";
@@ -102,6 +103,7 @@ namespace ChkProc.Feature.Main.UI
       // label3
       // 
       this.label3.AutoSize = true;
+      this.label3.ForeColor = System.Drawing.Color.White;
       this.label3.Location = new System.Drawing.Point(368, 8);
       this.label3.Margin = new System.Windows.Forms.Padding(3, 8, 3, 0);
       this.label3.Name = "label3";
@@ -129,12 +131,24 @@ namespace ChkProc.Feature.Main.UI
       // label4
       // 
       this.label4.AutoSize = true;
+      this.label4.ForeColor = System.Drawing.Color.White;
       this.label4.Location = new System.Drawing.Point(522, 8);
       this.label4.Margin = new System.Windows.Forms.Padding(3, 8, 3, 0);
       this.label4.Name = "label4";
       this.label4.Size = new System.Drawing.Size(17, 12);
       this.label4.TabIndex = 5;
       this.label4.Text = "초";
+      // 
+      // lblTime
+      // 
+      this.lblTime.AutoSize = true;
+      this.lblTime.ForeColor = System.Drawing.Color.LightGray;
+      this.lblTime.Location = new System.Drawing.Point(545, 8);
+      this.lblTime.Margin = new System.Windows.Forms.Padding(3, 8, 3, 0);
+      this.lblTime.Name = "lblTime";
+      this.lblTime.Size = new System.Drawing.Size(67, 12);
+      this.lblTime.TabIndex = 6;
+      this.lblTime.Text = "0시 0분 0초";
       // 
       // btnDel
       // 
@@ -161,7 +175,7 @@ namespace ChkProc.Feature.Main.UI
       this.btnNavToLogs.Name = "btnNavToLogs";
       this.btnNavToLogs.Size = new System.Drawing.Size(35, 27);
       this.btnNavToLogs.Symbol = "";
-      this.btnNavToLogs.SymbolColor = System.Drawing.SystemColors.HotTrack;
+      this.btnNavToLogs.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(215)))));
       this.btnNavToLogs.SymbolSize = 15F;
       this.btnNavToLogs.TabIndex = 7;
       this.btnNavToLogs.Click += new System.EventHandler(this.btnNavToLogs_Click);
@@ -176,7 +190,7 @@ namespace ChkProc.Feature.Main.UI
       this.btnRequired.Name = "btnRequired";
       this.btnRequired.Size = new System.Drawing.Size(35, 27);
       this.btnRequired.Symbol = "";
-      this.btnRequired.SymbolColor = System.Drawing.SystemColors.HotTrack;
+      this.btnRequired.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(215)))));
       this.btnRequired.SymbolSize = 15F;
       this.btnRequired.TabIndex = 8;
       this.btnRequired.Click += new System.EventHandler(this.btnRequired_Click);
@@ -189,23 +203,12 @@ namespace ChkProc.Feature.Main.UI
       this.flyRequiredSvc.TargetControl = this.btnRequired;
       this.flyRequiredSvc.FlyoutClosed += new System.Windows.Forms.FormClosedEventHandler(this.flyRequiredSvc_FlyoutClosed);
       // 
-      // lblTime
-      // 
-      this.lblTime.AutoSize = true;
-      this.lblTime.ForeColor = System.Drawing.Color.Gray;
-      this.lblTime.Location = new System.Drawing.Point(545, 8);
-      this.lblTime.Margin = new System.Windows.Forms.Padding(3, 8, 3, 0);
-      this.lblTime.Name = "lblTime";
-      this.lblTime.Size = new System.Drawing.Size(67, 12);
-      this.lblTime.TabIndex = 6;
-      this.lblTime.Text = "0시 0분 0초";
-      // 
       // SettingControl
       // 
       this.AllowDrop = true;
       this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.BackColor = System.Drawing.Color.White;
+      this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
       this.Controls.Add(this.flowLayoutPanel1);
       this.Controls.Add(this.btnRequired);
       this.Controls.Add(this.btnNavToLogs);

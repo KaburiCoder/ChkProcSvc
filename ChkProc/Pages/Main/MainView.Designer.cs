@@ -45,6 +45,7 @@ namespace ChkProc
       this.txtOutput = new DevComponents.DotNetBar.Controls.TextBoxX();
       this.label1 = new System.Windows.Forms.Label();
       this.svcTimer = new System.Windows.Forms.Timer(this.components);
+      this.styleManager1 = new DevComponents.DotNetBar.StyleManager(this.components);
       this.setListCtrl = new ChkProc.Feature.Main.UI.SettingListControl();
       this.panelEx1.SuspendLayout();
       this.flowLayoutPanel2.SuspendLayout();
@@ -66,22 +67,22 @@ namespace ChkProc
       this.panelEx1.Padding = new System.Windows.Forms.Padding(4);
       this.panelEx1.Size = new System.Drawing.Size(822, 50);
       this.panelEx1.Style.Alignment = System.Drawing.StringAlignment.Center;
-      this.panelEx1.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-      this.panelEx1.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+      this.panelEx1.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(110)))), ((int)(((byte)(100)))));
+      this.panelEx1.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(110)))), ((int)(((byte)(100)))));
       this.panelEx1.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
       this.panelEx1.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
-      this.panelEx1.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
+      this.panelEx1.Style.ForeColor.Color = System.Drawing.Color.White;
       this.panelEx1.Style.GradientAngle = 90;
       this.panelEx1.TabIndex = 2;
       // 
       // txtSvcStatus
       // 
-      this.txtSvcStatus.BackColor = System.Drawing.Color.White;
       // 
       // 
       // 
       this.txtSvcStatus.Border.Class = "TextBoxBorder";
       this.txtSvcStatus.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+      this.txtSvcStatus.DisabledBackColor = System.Drawing.Color.Black;
       this.txtSvcStatus.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
       this.txtSvcStatus.Location = new System.Drawing.Point(87, 15);
       this.txtSvcStatus.Name = "txtSvcStatus";
@@ -94,6 +95,7 @@ namespace ChkProc
       // label2
       // 
       this.label2.AutoSize = true;
+      this.label2.ForeColor = System.Drawing.Color.White;
       this.label2.Location = new System.Drawing.Point(12, 20);
       this.label2.Name = "label2";
       this.label2.Size = new System.Drawing.Size(69, 12);
@@ -168,6 +170,7 @@ namespace ChkProc
       // 
       // splitter1
       // 
+      this.splitter1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(135)))), ((int)(((byte)(135)))));
       this.splitter1.Dock = System.Windows.Forms.DockStyle.Top;
       this.splitter1.Location = new System.Drawing.Point(0, 248);
       this.splitter1.Name = "splitter1";
@@ -197,8 +200,8 @@ namespace ChkProc
       this.panelEx3.Padding = new System.Windows.Forms.Padding(4);
       this.panelEx3.Size = new System.Drawing.Size(822, 258);
       this.panelEx3.Style.Alignment = System.Drawing.StringAlignment.Center;
-      this.panelEx3.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-      this.panelEx3.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+      this.panelEx3.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(110)))), ((int)(((byte)(100)))));
+      this.panelEx3.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(110)))), ((int)(((byte)(100)))));
       this.panelEx3.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
       this.panelEx3.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
       this.panelEx3.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
@@ -208,13 +211,15 @@ namespace ChkProc
       // 
       // txtOutput
       // 
-      this.txtOutput.BackColor = System.Drawing.SystemColors.HighlightText;
+      this.txtOutput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
       // 
       // 
       // 
       this.txtOutput.Border.Class = "TextBoxBorder";
       this.txtOutput.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+      this.txtOutput.DisabledBackColor = System.Drawing.Color.Black;
       this.txtOutput.Dock = System.Windows.Forms.DockStyle.Fill;
+      this.txtOutput.ForeColor = System.Drawing.Color.White;
       this.txtOutput.Location = new System.Drawing.Point(4, 20);
       this.txtOutput.Multiline = true;
       this.txtOutput.Name = "txtOutput";
@@ -227,6 +232,7 @@ namespace ChkProc
       // label1
       // 
       this.label1.Dock = System.Windows.Forms.DockStyle.Top;
+      this.label1.ForeColor = System.Drawing.Color.White;
       this.label1.Location = new System.Drawing.Point(4, 4);
       this.label1.Name = "label1";
       this.label1.Size = new System.Drawing.Size(814, 16);
@@ -237,6 +243,11 @@ namespace ChkProc
       // 
       this.svcTimer.Enabled = true;
       this.svcTimer.Tick += new System.EventHandler(this.svcTimer_Tick);
+      // 
+      // styleManager1
+      // 
+      this.styleManager1.ManagerStyle = DevComponents.DotNetBar.eStyle.Office2010Black;
+      this.styleManager1.MetroColorParameters = new DevComponents.DotNetBar.Metro.ColorTables.MetroColorGeneratorParameters(System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31))))), System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(115)))), ((int)(((byte)(199))))));
       // 
       // setListCtrl
       // 
@@ -286,5 +297,6 @@ namespace ChkProc
     private System.Windows.Forms.Timer svcTimer;
     private DevComponents.DotNetBar.Controls.TextBoxX txtSvcStatus;
     private System.Windows.Forms.Label label2;
+    private DevComponents.DotNetBar.StyleManager styleManager1;
   }
 }

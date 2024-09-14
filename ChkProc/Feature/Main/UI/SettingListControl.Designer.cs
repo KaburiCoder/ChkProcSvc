@@ -31,9 +31,9 @@ namespace ChkProc.Feature.Main.UI
     {
       this.flpnl = new System.Windows.Forms.FlowLayoutPanel();
       this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
-      this.btnAddNew = new DevComponents.DotNetBar.ButtonX();
       this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
       this.btnSaveSettings = new DevComponents.DotNetBar.ButtonX();
+      this.btnAddNew = new DevComponents.DotNetBar.ButtonX();
       this.panelEx1.SuspendLayout();
       this.tableLayoutPanel1.SuspendLayout();
       this.SuspendLayout();
@@ -42,7 +42,7 @@ namespace ChkProc.Feature.Main.UI
       // 
       this.flpnl.AllowDrop = true;
       this.flpnl.AutoScroll = true;
-      this.flpnl.BackColor = System.Drawing.Color.White;
+      this.flpnl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
       this.flpnl.Dock = System.Windows.Forms.DockStyle.Fill;
       this.flpnl.Location = new System.Drawing.Point(0, 0);
       this.flpnl.Name = "flpnl";
@@ -68,21 +68,6 @@ namespace ChkProc.Feature.Main.UI
       this.panelEx1.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
       this.panelEx1.Style.GradientAngle = 90;
       this.panelEx1.TabIndex = 35;
-      // 
-      // btnAddNew
-      // 
-      this.btnAddNew.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-      this.btnAddNew.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-      this.btnAddNew.Dock = System.Windows.Forms.DockStyle.Fill;
-      this.btnAddNew.Location = new System.Drawing.Point(3, 3);
-      this.btnAddNew.Name = "btnAddNew";
-      this.btnAddNew.Size = new System.Drawing.Size(339, 32);
-      this.btnAddNew.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-      this.btnAddNew.Symbol = "";
-      this.btnAddNew.SymbolSize = 12F;
-      this.btnAddNew.TabIndex = 7;
-      this.btnAddNew.Text = "항목 추가";
-      this.btnAddNew.Click += new System.EventHandler(this.btnAddNew_Click);
       // 
       // tableLayoutPanel1
       // 
@@ -114,10 +99,26 @@ namespace ChkProc.Feature.Main.UI
       this.btnSaveSettings.Text = "설정 저장";
       this.btnSaveSettings.Click += new System.EventHandler(this.btnSaveSettings_Click);
       // 
+      // btnAddNew
+      // 
+      this.btnAddNew.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+      this.btnAddNew.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+      this.btnAddNew.Dock = System.Windows.Forms.DockStyle.Fill;
+      this.btnAddNew.Location = new System.Drawing.Point(3, 3);
+      this.btnAddNew.Name = "btnAddNew";
+      this.btnAddNew.Size = new System.Drawing.Size(339, 32);
+      this.btnAddNew.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+      this.btnAddNew.Symbol = "";
+      this.btnAddNew.SymbolSize = 12F;
+      this.btnAddNew.TabIndex = 7;
+      this.btnAddNew.Text = "항목 추가";
+      this.btnAddNew.Click += new System.EventHandler(this.btnAddNew_Click);
+      // 
       // SettingListControl
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+      this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
       this.Controls.Add(this.flpnl);
       this.Controls.Add(this.panelEx1);
       this.Name = "SettingListControl";

@@ -31,6 +31,13 @@ namespace ChkProc.Pages
     {
       this.components = new System.ComponentModel.Container();
       System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LogView));
       this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
       this.chkInactiveGraph = new DevComponents.DotNetBar.Controls.CheckBoxX();
@@ -44,12 +51,12 @@ namespace ChkProc.Pages
       this.labelX1 = new DevComponents.DotNetBar.LabelX();
       this.cmbProcess = new DevComponents.DotNetBar.Controls.ComboBoxEx();
       this.dgv = new DevComponents.DotNetBar.Controls.DataGridViewX();
+      this.infiniteTimer = new System.Windows.Forms.Timer(this.components);
       this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.CreatedAt = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.ProcessName = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.Message = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.infiniteTimer = new System.Windows.Forms.Timer(this.components);
       this.panelEx1.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.dtiE)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.dtiS)).BeginInit();
@@ -76,8 +83,8 @@ namespace ChkProc.Pages
       this.panelEx1.Name = "panelEx1";
       this.panelEx1.Size = new System.Drawing.Size(904, 49);
       this.panelEx1.Style.Alignment = System.Drawing.StringAlignment.Center;
-      this.panelEx1.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-      this.panelEx1.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+      this.panelEx1.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(110)))), ((int)(((byte)(100)))));
+      this.panelEx1.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(110)))), ((int)(((byte)(100)))));
       this.panelEx1.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
       this.panelEx1.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
       this.panelEx1.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
@@ -97,6 +104,7 @@ namespace ChkProc.Pages
       this.chkInactiveGraph.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
       this.chkInactiveGraph.TabIndex = 14;
       this.chkInactiveGraph.Text = "Inactive Graph";
+      this.chkInactiveGraph.TextColor = System.Drawing.Color.White;
       this.chkInactiveGraph.CheckedChanged += new System.EventHandler(this.chkInactiveGraph_CheckedChanged);
       // 
       // chkInfinite
@@ -112,6 +120,7 @@ namespace ChkProc.Pages
       this.chkInfinite.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
       this.chkInfinite.TabIndex = 12;
       this.chkInfinite.Text = "실시간 조회";
+      this.chkInfinite.TextColor = System.Drawing.Color.White;
       this.chkInfinite.CheckedChanged += new System.EventHandler(this.chkInfinite_CheckedChanged);
       // 
       // btnSearch
@@ -151,6 +160,7 @@ namespace ChkProc.Pages
       // 
       // 
       this.labelX3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+      this.labelX3.ForeColor = System.Drawing.Color.White;
       this.labelX3.Location = new System.Drawing.Point(361, 17);
       this.labelX3.Name = "labelX3";
       this.labelX3.Size = new System.Drawing.Size(16, 16);
@@ -258,6 +268,7 @@ namespace ChkProc.Pages
       // 
       // 
       this.labelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+      this.labelX2.ForeColor = System.Drawing.Color.White;
       this.labelX2.Location = new System.Drawing.Point(201, 15);
       this.labelX2.Name = "labelX2";
       this.labelX2.Size = new System.Drawing.Size(31, 18);
@@ -271,6 +282,7 @@ namespace ChkProc.Pages
       // 
       // 
       this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+      this.labelX1.ForeColor = System.Drawing.Color.White;
       this.labelX1.Location = new System.Drawing.Point(12, 15);
       this.labelX1.Name = "labelX1";
       this.labelX1.Size = new System.Drawing.Size(56, 18);
@@ -294,7 +306,14 @@ namespace ChkProc.Pages
       // dgv
       // 
       this.dgv.AllowUserToAddRows = false;
-      this.dgv.BackgroundColor = System.Drawing.Color.White;
+      dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+      dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+      dataGridViewCellStyle1.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+      dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+      dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+      dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+      dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+      this.dgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
       this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
       this.dgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
@@ -302,25 +321,42 @@ namespace ChkProc.Pages
             this.ProcessName,
             this.Status,
             this.Message});
-      dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-      dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-      dataGridViewCellStyle1.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-      dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-      dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-      dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-      dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-      this.dgv.DefaultCellStyle = dataGridViewCellStyle1;
+      dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+      dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
+      dataGridViewCellStyle7.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+      dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+      dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+      dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
+      dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+      this.dgv.DefaultCellStyle = dataGridViewCellStyle7;
       this.dgv.Dock = System.Windows.Forms.DockStyle.Fill;
-      this.dgv.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
+      this.dgv.EnableHeadersVisualStyles = false;
+      this.dgv.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
       this.dgv.Location = new System.Drawing.Point(0, 49);
       this.dgv.Name = "dgv";
+      dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+      dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
+      dataGridViewCellStyle8.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+      dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+      dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+      dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+      dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+      this.dgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
       this.dgv.RowTemplate.Height = 23;
       this.dgv.Size = new System.Drawing.Size(904, 500);
       this.dgv.TabIndex = 4;
       this.dgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewX1_CellContentClick);
       // 
+      // infiniteTimer
+      // 
+      this.infiniteTimer.Interval = 5000;
+      this.infiniteTimer.Tick += new System.EventHandler(this.infiniteTimer_Tick);
+      // 
       // Id
       // 
+      dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
+      dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+      this.Id.DefaultCellStyle = dataGridViewCellStyle2;
       this.Id.HeaderText = "Id";
       this.Id.Name = "Id";
       this.Id.ReadOnly = true;
@@ -328,6 +364,9 @@ namespace ChkProc.Pages
       // 
       // CreatedAt
       // 
+      dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
+      dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+      this.CreatedAt.DefaultCellStyle = dataGridViewCellStyle3;
       this.CreatedAt.HeaderText = "CreatedAt";
       this.CreatedAt.Name = "CreatedAt";
       this.CreatedAt.ReadOnly = true;
@@ -335,27 +374,31 @@ namespace ChkProc.Pages
       // 
       // ProcessName
       // 
+      dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
+      dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+      this.ProcessName.DefaultCellStyle = dataGridViewCellStyle4;
       this.ProcessName.HeaderText = "ProcessName";
       this.ProcessName.Name = "ProcessName";
       this.ProcessName.ReadOnly = true;
       // 
       // Status
       // 
+      dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
+      dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+      this.Status.DefaultCellStyle = dataGridViewCellStyle5;
       this.Status.HeaderText = "Status";
       this.Status.Name = "Status";
       this.Status.ReadOnly = true;
       // 
       // Message
       // 
+      dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
+      dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+      this.Message.DefaultCellStyle = dataGridViewCellStyle6;
       this.Message.HeaderText = "Message";
       this.Message.Name = "Message";
       this.Message.ReadOnly = true;
       this.Message.Width = 500;
-      // 
-      // infiniteTimer
-      // 
-      this.infiniteTimer.Interval = 5000;
-      this.infiniteTimer.Tick += new System.EventHandler(this.infiniteTimer_Tick);
       // 
       // LogView
       // 
@@ -390,13 +433,13 @@ namespace ChkProc.Pages
     private DevComponents.DotNetBar.ButtonX btnSearch;
     private DevComponents.DotNetBar.ButtonX btnExit;
     private DevComponents.DotNetBar.Controls.DataGridViewX dgv;
+    private DevComponents.DotNetBar.Controls.CheckBoxX chkInfinite;
+    private System.Windows.Forms.Timer infiniteTimer;
+    private DevComponents.DotNetBar.Controls.CheckBoxX chkInactiveGraph;
     private System.Windows.Forms.DataGridViewTextBoxColumn Id;
     private System.Windows.Forms.DataGridViewTextBoxColumn CreatedAt;
     private System.Windows.Forms.DataGridViewTextBoxColumn ProcessName;
     private System.Windows.Forms.DataGridViewTextBoxColumn Status;
     private System.Windows.Forms.DataGridViewTextBoxColumn Message;
-    private DevComponents.DotNetBar.Controls.CheckBoxX chkInfinite;
-    private System.Windows.Forms.Timer infiniteTimer;
-    private DevComponents.DotNetBar.Controls.CheckBoxX chkInactiveGraph;
   }
 }

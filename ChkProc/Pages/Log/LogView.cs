@@ -97,34 +97,34 @@ namespace ChkProc.Pages
       // *-- 색 스타일 지정 --*
       if (log.ProcessName == "<Service>")
       {
-        dgvRow.DefaultCellStyle.BackColor = Color.FromArgb(220, 230, 240);
+        dgvRow.DefaultCellStyle.BackColor = Color.FromArgb(80, 100, 100);
       }
 
       if (log.ProcessName == "<Daemon>")
       {
-        dgvRow.DefaultCellStyle.BackColor = Color.FromArgb(240, 230, 220);
+        dgvRow.DefaultCellStyle.BackColor = Color.FromArgb(100, 100, 80);
       }
 
       if (log.Status.IndexOf("Error", StringComparison.OrdinalIgnoreCase) > -1)
       {
-        dgvRow.DefaultCellStyle.BackColor = Color.LightPink;
+        dgvRow.DefaultCellStyle.BackColor = Color.Maroon;
       }
 
       switch (log.Status)
       {
         case "Active":
-          dgvRow.Cells[colIdx.Status].Style.ForeColor = Color.Green;
+          dgvRow.Cells[colIdx.Status].Style.ForeColor = Color.LightGreen;
           dgvRow.Cells[colIdx.Status].Style.Font = new Font("굴림", 9, FontStyle.Bold);
           break;
         case "Inactive":
-          dgvRow.Cells[colIdx.Status].Style.ForeColor = Color.Red;
+          dgvRow.Cells[colIdx.Status].Style.ForeColor = Color.Pink;
           dgvRow.Cells[colIdx.Status].Style.Font = new Font("굴림", 9, FontStyle.Bold);
           break;
         case "ActiveSvc":
-          dgvRow.Cells[colIdx.Status].Style.ForeColor = Color.Green;
+          dgvRow.Cells[colIdx.Status].Style.ForeColor = Color.LightGreen;
           break;
         case "InactiveSvc":
-          dgvRow.Cells[colIdx.Status].Style.ForeColor = Color.Red;
+          dgvRow.Cells[colIdx.Status].Style.ForeColor = Color.Pink;
           break;
       }
     }
